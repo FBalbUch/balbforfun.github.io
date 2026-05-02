@@ -1,55 +1,75 @@
-@import url(https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap);
-
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 body {
     background: linear-gradient(180deg, #16151e 0%, #dfdcea 90%);
     font-family: 'Bebas Neue', sans-serif;
     background-attachment: fixed;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
 }
 
+
+/* Контейнер для видео */
+
 .bg {
-    position: relative; /* ✅ ДОБАВЛЕНО */
+    position: relative;
     width: 100%;
-    height: 100vh; /* ✅ Изменено с 70vh на 100vh для полного экрана */
+    height: 100vh;
+    /* На всю высоту экрана */
     overflow: hidden;
 }
 
+
+/* Видео на фоне */
+
 .bg video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    filter: saturate(100%) hue-rotate(316deg); /* ✅ ОБЪЕДИНЕНО */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: saturate(100%) hue-rotate(316deg);
+    /* Объединенные фильтры */
 }
 
-/* === ЛОГОТИП === */
+
+/* Логотип поверх видео (по центру сверху) */
+
 .logo-overlay {
     position: absolute;
-    top: 20px;
+    top: 10px;
+    /* Отступ сверху */
     left: 50%;
     transform: translateX(-50%);
+    /* Центрируем по горизонтали */
     z-index: 10;
+    /* Поверх всего */
     display: block;
     text-decoration: none;
 }
 
 .logo-overlay img {
     width: 200px;
+    /* Размер логотипа */
     height: auto;
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    /* Тень для логотипа */
     transition: all 0.3s ease;
 }
+
+
+/* Эффект при наведении на логотип */
 
 .logo-overlay:hover img {
     transform: scale(1.05);
     filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
 }
 
-/* === FUTURE IS HERE === */
+
+/* Текст FUTURE IS HERE */
+
 #future {
     position: absolute;
     top: 50%;
@@ -66,23 +86,32 @@ body {
     transition: all 0.3s ease;
 }
 
+
+/* Эффект при наведении */
+
 .nav-link:hover #future {
     color: white;
-    text-shadow: 
-        0 0 10px white,
-        0 0 20px white,
-        0 0 40px rgba(255, 255, 255, 0.8);
-    transform: translate(-50%, -50%) scale(1.1); /* ✅ СОХРАНЯЕМ ЦЕНТРИРОВАНИЕ */
+    text-shadow: 0 0 10px white, 0 0 20px white, 0 0 40px rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
     letter-spacing: 3px;
     animation: neonPulse 1.5s infinite alternate;
 }
 
+
+/* Анимация пульсации */
+
 @keyframes neonPulse {
-    0% { opacity: 1; }
-    100% { opacity: 0.8; }
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.8;
+    }
 }
 
-/* === НИЖНЯЯ НАДПИСЬ === */
+
+/* Маленькая полупрозрачная надпись внизу */
+
 #c {
     position: absolute;
     bottom: 10px;
@@ -92,28 +121,37 @@ body {
     margin: 0;
     z-index: 1;
     opacity: 0.3;
+    /* Полупрозрачный */
 }
 
+
 /* === АДАПТИВНОСТЬ === */
+
 @media (max-width: 768px) {
     .logo-overlay img {
         width: 150px !important;
+        /* Уменьшаем логотип на планшетах */
     }
-    
     #future {
         font-size: 3rem !important;
+        padding: 0 20px;
     }
-    
     .bg {
         height: 100vh !important;
+    }
+    #c {
+        font-size: 0.7rem;
+        bottom: 5px;
+        left: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .logo-overlay img {
         width: 120px !important;
+        /* Ещё меньше на телефонах */
+        top: 10px !important;
     }
-    
     #future {
         font-size: 2.5rem !important;
     }
