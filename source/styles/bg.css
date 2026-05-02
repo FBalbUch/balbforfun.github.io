@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap);
+body {
+    background: linear-gradient(180deg, #16151e 0%, #dfdcea 90%);
+    font-family: 'Bebas Neue', sans-serif;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.bg {
+    width: 100%;
+    height: 70vh;
+}
+
+.bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: saturate(100%);
+    filter: hue-rotate(316deg);
+}
+
+#future {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgb(234, 244, 255);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#c {
+    color: aliceblue;
+    filter: opacity(50%);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 120px !important;
+        height: auto;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5em !important;
+    }
+    .hero-text {
+        font-size: 2.5rem !important;
+        padding: 0 20px;
+        text-align: center;
+    }
+    .card {
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    .card-img-top {
+        height: 250px;
+        object-fit: contain;
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 1.3rem !important;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+    .card-text {
+        font-size: 0.9rem !important;
+        padding: 0 10px;
+        line-height: 1.5;
+    }
+    .btn-primary {
+        font-size: 0.85rem !important;
+        padding: 8px 16px !important;
+        margin: 10px auto;
+        display: block;
+        width: fit-content;
+    }
+    .modal-content {
+        width: 95% !important;
+        margin: 15% auto !important;
+        padding: 20px !important;
+    }
+    .modal-content h2 {
+        font-size: 1.5rem !important;
+    }
+    .form-group input {
+        font-size: 14px !important;
+        padding: 10px !important;
+    }
+    .btn-register {
+        font-size: 14px !important;
+        padding: 12px !important;
+    }
+    .bg {
+        height: 50vh !important;
+        /* уменьшаем высоту видео на мобильных */
+    }
+    .bg video {
+        object-position: center top;
+        /* фокусируемся на верхней части видео */
+    }
+    section {
+        padding: 20px 10px !important;
+    }
+    .container-fluid {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 2rem !important;
+    }
+    .card-title {
+        font-size: 1.1rem !important;
+    }
+    .card-text {
+        font-size: 0.85rem !important;
+    }
+    .btn-primary {
+        font-size: 0.8rem !important;
+        padding: 6px 12px !important;
+    }
+    .navbar-brand img {
+        width: 100px !important;
+    }
+}
