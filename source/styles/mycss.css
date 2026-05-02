@@ -56,7 +56,24 @@ body {
     background-color: rgb(67, 141, 190);
     border: none;
 }
+.btn-primary:hover {
+    background: linear-gradient(45deg, #007bff, #00d4ff, #007bff);
+    background-size: 200% 200%;
+    animation: gradientShift 2s ease infinite;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
+}
 
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 @media (max-width: 768px) {
     .container-fluid {
         padding-left: 15px !important;
